@@ -1461,7 +1461,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
       <div style="display:flex;flex-direction:column;gap:22px;min-height:0">
         <div class="kpis" data-a="flip" style="--d:3">
           <div class="kpi"><div class="num" data-bind="screening.forms">—</div><span>استبانة فرز مكتملة</span></div>
-          <div class="kpi l"><div class="num gtext" data-bind="interviews.n">—</div><span>مقابلة موثّقة في اللوحة</span></div>
+          <div class="kpi l"><div class="num gtext" data-bind="interviews.n">—</div><span>مقابلة شخصية أُجريت</span></div>
         </div>
         <div class="panel" data-a="rise3d" style="--d:4;flex:1"><h5>الطلبات يومًا بيوم</h5><div class="sub">عدد الطلبات في كل يوم منذ نشر الرابط</div><div class="ch" data-chart="area" data-src="screening.daily" data-w="700" data-h="300"></div></div>
       </div>
@@ -1555,9 +1555,9 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     <div class="kicker" data-a="up"><svg class="sp"><use href="#sp"/></svg>نتائج الأبناء · تقييم المقابلات</div>
     <h2 class="t2" data-a="up" style="--d:1;margin-top:12px">ماذا قالت المقابلات؟</h2>
     <div class="dgrid" style="grid-template-columns:1fr .8fr 1.1fr">
-      <div class="panel" data-a="rise3d" style="--d:2"><h5>توزيع درجة الملاءمة</h5><div class="sub">عدد الطلاب في كل فئة درجات</div><div class="ch" data-chart="barv" data-src="interviews.bins" data-w="640" data-h="440" data-color="#6C7FD8"></div></div>
-      <div class="panel" data-a="rise3d" style="--d:3"><h5>تقدير المقابلة</h5><div class="sub">كما أصدرته اللوحة — وقُبلوا جميعًا</div><div class="ch" data-chart="donut" data-src="interviews.verdicts" data-size="380" data-clabel="مقبولون"></div><div class="legend" data-legend="interviews.verdicts"></div></div>
-      <div class="panel" data-a="rise3d" style="--d:4"><h5>متوسط الأبعاد السبعة</h5><div class="sub">الأولية مقابل العليا (من 100)</div><div class="ch" data-chart="radar" data-src="interviews.dimsByStage" data-size="640" data-values="false"></div><div class="legend"><span><i style="background:#14A89B"></i>الأولية</span><span><i style="background:#F5B915"></i>العليا</span></div></div>
+      <div class="panel" data-a="rise3d" style="--d:2"><h5>توزيع درجة الملاءمة</h5><div class="sub" data-bind-text="interviews.note">عدد الطلاب في كل فئة درجات</div><div class="ch" data-chart="barv" data-src="interviews.bins" data-w="640" data-h="440" data-color="#6C7FD8"></div></div>
+      <div class="panel" data-a="rise3d" style="--d:3"><h5>تقدير المقابلة</h5><div class="sub">وقُبل المرشّحون جميعًا</div><div class="ch" data-chart="donut" data-src="interviews.verdicts" data-size="380" data-clabel="مقبولون"></div><div class="legend" data-legend="interviews.verdicts"></div></div>
+      <div class="panel" data-a="rise3d" style="--d:4"><h5>متوسط الأبعاد السبعة</h5><div class="sub">من المقابلات المرصودة تفصيلًا · الأولية مقابل العليا</div><div class="ch" data-chart="radar" data-src="interviews.dimsByStage" data-size="640" data-values="false"></div><div class="legend"><span><i style="background:#14A89B"></i>الأولية</span><span><i style="background:#F5B915"></i>العليا</span></div></div>
     </div>
   </div>
   <div class="privacy"><svg><use href="#i-lock"/></svg>بيانات مجمّعة بلا أسماء ولا أرقام هواتف</div>
@@ -1844,7 +1844,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
 <script>window.ND = {
  "meta": {
   "source": "resp.xlsx",
-  "built": "2026-10-12 21:22"
+  "built": "2026-10-12 21:26"
  },
  "screening": {
   "n": 20,
@@ -2343,19 +2343,19 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
    ],
    [
     "قوبلوا",
-    6,
+    16,
     "#7DBE3C"
    ],
    [
     "مرشّحون للمقعد",
-    5,
+    15,
     "#F5B915"
    ]
   ],
   "hifzNote": "كما ذكره ولي الأمر · 17 إجابة قابلة للقراءة · 10 منهم تجاوزوا جزءًا واحدًا"
  },
  "interviews": {
-  "n": 6,
+  "n": 16,
   "bins": [
    [
     "أقل من 50",
@@ -2366,27 +2366,19 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     1
    ],
    [
-    "60–69",
+    "60–79",
     2
    ],
    [
-    "70–79",
-    0
-   ],
-   [
-    "80–89",
-    0
-   ],
-   [
-    "90+",
-    3
+    "80 فأكثر",
+    13
    ]
   ],
   "avg": 81,
   "verdicts": [
    [
     "مرشّح بقوة",
-    3,
+    13,
     "#0E8077"
    ],
    [
@@ -2436,7 +2428,10 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
    "الطلاقة القرائية": 75,
    "القرآن": 75,
    "التزام الأسرة": 92
-  }
+  },
+  "recorded": 6,
+  "unrecorded": 10,
+  "note": "16 مقابلة أُجريت — منها 10 تجاوز أصحابها 80% ولم تُرصد تفصيلًا لضيق الوقت"
  },
  "ranking": {
   "decisions": [
@@ -2473,7 +2468,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     "d": "نبدأ بهما في الأسابيع الأولى: مهام قصيرة تُكمَل، وتعليمات واضحة تتدرّج."
    },
    {
-    "t": "المقابلات: الاستعداد القرآني 42% في الأولية مقابل 92% في العليا",
+    "t": "في المقابلات المرصودة تفصيلًا: الاستعداد القرآني 42% في الأولية مقابل 92% في العليا",
     "d": "الصغار يحتاجون تأسيسًا في التلاوة قبل الحفظ الكثير، والكبار جاهزون لوتيرة أسرع."
    }
   ]
