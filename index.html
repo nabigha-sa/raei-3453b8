@@ -1438,19 +1438,32 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
 </section>
 
 <!-- ================= 22-أ. قمع القبول (بيانات) ================= -->
-<section class="slide paper grain" id="s-d1" data-need data-title="قمع القبول" data-notes="هذه رحلة المتقدّمين بالأرقام الفعلية من جدول القبول.">
+<section class="slide paper grain" id="s-d1" data-need data-title="المقبولون" data-notes="هذه حصيلة القبول بالأرقام الفعلية: المقبولون في الدورة الأولى، والمقاعد المتبقية، والاستبانات والمقابلات الموثّقة، والطلبات يومًا بيوم.">
+  <style>
+    #s-d1 .seatsw{display:grid;grid-template-columns:repeat(10,1fr);gap:12px;margin-top:6px}
+    #s-d1 .hero{display:flex;align-items:baseline;gap:18px;margin-bottom:10px}
+    #s-d1 .hero .num{font-size:150px;line-height:.9}
+    #s-d1 .hero span{font:700 34px/1.3 var(--fd);color:var(--ink)}
+    #s-d1 .hero small{display:block;font:500 21px var(--fs);color:var(--mute);margin-top:6px}
+    #s-d1 .lg{display:flex;gap:26px;margin-top:16px;font:600 20px var(--fs);color:#3B4C5A}
+    #s-d1 .lg i{display:inline-block;width:16px;height:16px;border-radius:5px;margin-inline-end:8px;vertical-align:-2px}
+  </style>
   <div class="brand"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="logo_p.png"><span class="sep"></span><img class="sah" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="sahel_p.png"></div>
   <div class="pad">
     <div class="kicker" data-a="up"><svg class="sp"><use href="#sp"/></svg>نتائج الأبناء · من جدول القبول</div>
-    <h2 class="t2" data-a="up" style="--d:1;margin-top:12px" data-bind-text="insights.funnelTitle">من الرابط إلى المقعد… بالأرقام</h2>
-    <div class="dgrid" style="grid-template-columns:1.1fr .9fr">
-      <div class="panel" data-a="rise3d" style="--d:2"><h5>قمع القبول</h5><div class="sub">كل مرحلة تصفّي التي قبلها بمعيار مكتوب</div><div class="ch" data-chart="funnel" data-src="screening.funnel" data-w="900"></div></div>
-      <div style="display:flex;flex-direction:column;gap:24px;min-height:0">
+    <h2 class="t2" data-a="up" style="--d:1;margin-top:12px">من الرابط إلى المقعد… بالأرقام</h2>
+    <div class="dgrid" style="grid-template-columns:1.25fr .75fr">
+      <div class="panel" data-a="rise3d" style="--d:2">
+        <div class="hero"><span class="num gtext" data-bind="screening.accepted">—</span><div><span>طالبًا قُبلوا في الدورة الأولى</span><small>من 30 مقعدًا متاحًا · كل مقعد ملوّن طالب مقبول</small></div></div>
+        <div class="seatsw" data-seats="30" data-fill-src="screening.accepted" data-d0="4"></div>
+        <div class="lg"><span><i style="background:linear-gradient(#0E86C8,#14A89B)"></i>مقبول</span><span><i style="background:#E4DCCA"></i>مقعد متاح</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:22px;min-height:0">
         <div class="kpis" data-a="flip" style="--d:3">
-          <div class="kpi"><div class="num" data-bind="screening.n">—</div><span>طلبًا في رابط الفرز</span></div>
-          <div class="kpi l"><div class="num gtext" data-bind="screening.passPct" data-suf="%">—</div><span>نسبة من تجاوز الفرز</span></div>
+          <div class="kpi"><div class="num" data-bind="screening.forms">—</div><span>استبانة فرز مكتملة</span></div>
+          <div class="kpi l"><div class="num gtext" data-bind="interviews.n">—</div><span>مقابلة موثّقة في اللوحة</span></div>
         </div>
-        <div class="panel" data-a="rise3d" style="--d:4;flex:1"><h5>الطلبات يومًا بيوم</h5><div class="sub">عدد الطلبات في كل يوم منذ نشر الرابط</div><div class="ch" data-chart="area" data-src="screening.daily" data-w="760" data-h="300"></div></div>
+        <div class="panel" data-a="rise3d" style="--d:4;flex:1"><h5>الطلبات يومًا بيوم</h5><div class="sub">عدد الطلبات في كل يوم منذ نشر الرابط</div><div class="ch" data-chart="area" data-src="screening.daily" data-w="700" data-h="300"></div></div>
       </div>
     </div>
   </div>
@@ -1464,7 +1477,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     <div class="kicker" data-a="up"><svg class="sp"><use href="#sp"/></svg>نتائج الأبناء · من جدول القبول</div>
     <h2 class="t2" data-a="up" style="--d:1;margin-top:12px">من هم المتقدّمون؟</h2>
     <div class="dgrid" style="grid-template-columns:1.25fr .75fr 1fr">
-      <div class="panel" data-a="rise3d" style="--d:2"><h5>حسب الصف الدراسي</h5><div class="sub">عدد الطلبات لكل صف</div><div class="ch" data-chart="barv" data-src="screening.byGrade" data-w="760" data-h="460" data-color="#0E86C8"></div></div>
+      <div class="panel" data-a="rise3d" style="--d:2"><h5>حسب الصف الدراسي</h5><div class="sub">من الاستبانات المكتملة</div><div class="ch" data-chart="barv" data-src="screening.byGrade" data-w="760" data-h="460" data-color="#0E86C8"></div></div>
       <div class="panel" data-a="rise3d" style="--d:3"><h5>حسب المرحلة</h5><div class="sub">الأولية (1–3) والعليا (4–6)</div><div class="ch" data-chart="donut" data-src="screening.stage" data-size="400" data-clabel="طلبًا"></div><div class="legend" data-legend="screening.stage"></div></div>
       <div class="panel" data-a="rise3d" style="--d:4"><h5>المدارس الحالية</h5><div class="sub">أكثر المدارس التي جاء منها المتقدّمون</div><div class="ch" data-chart="barh" data-src="screening.schools" data-w="640" data-lw="230" data-rh="56" data-color="#14A89B"></div></div>
     </div>
@@ -1473,12 +1486,12 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
 </section>
 
 <!-- ================= 22-ج. ملف الأسرة ================= -->
-<section class="slide paper grain" id="s-d3" data-need data-title="ملف الأسرة" data-notes="متوسط نسب المحاور الثلاثة في فرز الأهالي، وتصنيف الأسر، وأكثر البوابات التي استوقفتنا.">
+<section class="slide paper grain" id="s-d3" data-need data-title="ملف الأسرة" data-notes="متوسط نسب المحاور الثلاثة في فرز الأهالي، وما اختارته الأسر عن الرسوم.">
   <div class="brand"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="logo_p.png"><span class="sep"></span><img class="sah" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-asset="sahel_p.png"></div>
   <div class="pad">
     <div class="kicker" data-a="up"><svg class="sp"><use href="#sp"/></svg>نتائج الأبناء · فرز الأهالي</div>
     <h2 class="t2" data-a="up" style="--d:1;margin-top:12px">ملف الأسرة كما رسمته إجاباتها</h2>
-    <div class="dgrid" style="grid-template-columns:1.3fr .85fr 1fr">
+    <div class="dgrid" style="grid-template-columns:1.35fr 1fr">
       <div class="panel" data-a="rise3d" style="--d:2"><h5>متوسط المحاور الثلاثة</h5><div class="sub">نسبة متوسطة لكل محور (من 100)</div>
         <div class="ch" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:center">
           <div style="text-align:center"><div data-chart="meter" data-src="screening.scores.commit" data-size="300"></div><b style="font:700 22px var(--fs)">الالتزام الأسري</b></div>
@@ -1486,8 +1499,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
           <div style="text-align:center"><div data-chart="meter" data-src="screening.scores.ready" data-size="300"></div><b style="font:700 22px var(--fs)">استعداد الطفل</b></div>
         </div>
       </div>
-      <div class="panel" data-a="rise3d" style="--d:3"><h5>تصنيف الأسر</h5><div class="sub">آليًا من الفرز</div><div class="ch" data-chart="donut" data-src="screening.categories" data-size="400" data-clabel="أسرة"></div><div class="legend" data-legend="screening.categories"></div></div>
-      <div class="panel" data-a="rise3d" style="--d:4"><h5>الأسر والرسوم</h5><div class="sub">ما اختارته الأسرة عن رسوم الـ15,000</div><div class="ch" data-chart="barh" data-src="screening.feesFull" data-w="600" data-lw="210" data-rh="76" data-ls="23"></div></div>
+      <div class="panel" data-a="rise3d" style="--d:4"><h5>الأسر والرسوم</h5><div class="sub">ما اختارته الأسرة عن رسوم الـ15,000</div><div class="ch" data-chart="barh" data-src="screening.feesFull" data-w="620" data-lw="230" data-rh="80" data-ls="24"></div></div>
     </div>
   </div>
   <div class="privacy"><svg><use href="#i-lock"/></svg>بيانات مجمّعة بلا أسماء ولا أرقام هواتف</div>
@@ -1544,7 +1556,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     <h2 class="t2" data-a="up" style="--d:1;margin-top:12px">ماذا قالت المقابلات؟</h2>
     <div class="dgrid" style="grid-template-columns:1fr .8fr 1.1fr">
       <div class="panel" data-a="rise3d" style="--d:2"><h5>توزيع درجة الملاءمة</h5><div class="sub">عدد الطلاب في كل فئة درجات</div><div class="ch" data-chart="barv" data-src="interviews.bins" data-w="640" data-h="440" data-color="#6C7FD8"></div></div>
-      <div class="panel" data-a="rise3d" style="--d:3"><h5>الأحكام</h5><div class="sub">كما أصدرتها لوحة المقابلة</div><div class="ch" data-chart="donut" data-src="interviews.verdicts" data-size="380" data-clabel="مقابلة"></div><div class="legend" data-legend="interviews.verdicts"></div></div>
+      <div class="panel" data-a="rise3d" style="--d:3"><h5>تقدير المقابلة</h5><div class="sub">كما أصدرته اللوحة — وقُبلوا جميعًا</div><div class="ch" data-chart="donut" data-src="interviews.verdicts" data-size="380" data-clabel="مقبولون"></div><div class="legend" data-legend="interviews.verdicts"></div></div>
       <div class="panel" data-a="rise3d" style="--d:4"><h5>متوسط الأبعاد السبعة</h5><div class="sub">الأولية مقابل العليا (من 100)</div><div class="ch" data-chart="radar" data-src="interviews.dimsByStage" data-size="640" data-values="false"></div><div class="legend"><span><i style="background:#14A89B"></i>الأولية</span><span><i style="background:#F5B915"></i>العليا</span></div></div>
     </div>
   </div>
@@ -1832,16 +1844,19 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
 <script>window.ND = {
  "meta": {
   "source": "resp.xlsx",
-  "built": "2026-10-12 20:46"
+  "built": "2026-10-12 21:22"
  },
  "screening": {
-  "n": 19,
+  "n": 20,
   "passed": 18,
-  "passPct": 95,
+  "passPct": 90,
+  "accepted": 23,
+  "forms": 20,
+  "seatsLeft": 7,
   "byGrade": [
    [
     "الصف 1",
-    2
+    3
    ],
    [
     "الصف 2",
@@ -1867,7 +1882,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
   "stage": [
    [
     "الأولية",
-    10,
+    11,
     "#0E86C8"
    ],
    [
@@ -1876,7 +1891,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     "#14A89B"
    ]
   ],
-  "ageAvg": 8.7,
+  "ageAvg": 8.5,
   "schools": [
    [
     "حمزة الكوفي",
@@ -1892,14 +1907,14 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
    ],
    [
     "مدارس أخرى",
-    6
+    7
    ]
   ],
   "scores": {
-   "total": 82,
-   "commit": 88,
-   "values": 86,
-   "ready": 76,
+   "total": 81,
+   "commit": 85,
+   "values": 85,
+   "ready": 75,
    "totalPassed": 82
   },
   "categories": [
@@ -1915,7 +1930,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
    ],
    [
     "غير مناسب حاليًا",
-    1,
+    2,
     "#E8775B"
    ]
   ],
@@ -1937,16 +1952,20 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
    [
     "مرتفعة علينا، ونحتاج دعمًا جزئيًا",
     3
+   ],
+   [
+    "نحتاج دعمًا جزئيًا",
+    1
    ]
   ],
   "daily": [
    [
     "اليوم 1",
-    2
+    1
    ],
    [
     "اليوم 2",
-    6
+    0
    ],
    [
     "اليوم 3",
@@ -1962,10 +1981,18 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
    ],
    [
     "اليوم 6",
-    0
+    6
    ],
    [
     "اليوم 7",
+    2
+   ],
+   [
+    "اليوم 8",
+    0
+   ],
+   [
+    "اليوم 9",
     1
    ]
   ],
@@ -2027,6 +2054,11 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
       "في الجمعة والأعياد",
       1,
       "#7DBE3C"
+     ],
+     [
+      "نادرًا",
+      1,
+      "#F5B915"
      ]
     ]
    },
@@ -2035,7 +2067,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     "parts": [
      [
       "ملتحق ويذهب برغبته",
-      8,
+      9,
       "#0E86C8"
      ],
      [
@@ -2057,7 +2089,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     "parts": [
      [
       "أقل من ساعة",
-      12,
+      13,
       "#0E86C8"
      ],
      [
@@ -2201,15 +2233,15 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     15
    ],
    [
+    "الأب والأم معًا",
+    2
+   ],
+   [
     "الأب",
     2
    ],
    [
     "أخ أكبر أو شخص آخر",
-    1
-   ],
-   [
-    "الأب والأم معًا",
     1
    ]
   ],
@@ -2248,7 +2280,15 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     3
    ],
    [
-    "مقاطع قصيرة",
+    "لا يشاهد",
+    1
+   ],
+   [
+    "أنمي",
+    1
+   ],
+   [
+    "مسلسلات",
     1
    ]
   ],
@@ -2259,12 +2299,12 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
    ]
   ],
   "readiness": {
-   "الالتزام بالتعليمات": 67,
-   "المثابرة": 66,
+   "الالتزام بالتعليمات": 65,
+   "المثابرة": 64,
    "الاستقلال": 82,
-   "التواصل": 91,
-   "الضبط الانفعالي": 70,
-   "تحمّل اليوم الطويل": 82,
+   "التواصل": 89,
+   "الضبط الانفعالي": 68,
+   "تحمّل اليوم الطويل": 80,
    "الاستيقاظ": 75
   },
   "hifz": [
@@ -2282,7 +2322,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
    ],
    [
     "4–6 أجزاء",
-    4
+    5
    ],
    [
     "7 أجزاء فأكثر",
@@ -2293,7 +2333,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
   "funnel": [
    [
     "عبّأت رابط الفرز",
-    19,
+    20,
     "#0E86C8"
    ],
    [
@@ -2312,7 +2352,7 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     "#F5B915"
    ]
   ],
-  "hifzNote": "كما ذكره ولي الأمر · 16 إجابة قابلة للقراءة · 9 منهم تجاوزوا جزءًا واحدًا"
+  "hifzNote": "كما ذكره ولي الأمر · 17 إجابة قابلة للقراءة · 10 منهم تجاوزوا جزءًا واحدًا"
  },
  "interviews": {
   "n": 6,
@@ -2413,11 +2453,11 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
  "insights": {
   "items": [
    {
-    "t": "18 من 19 أسرة تجاوزت الفرز، والأسر كلها اختارت: «أريد ابني قريبًا من القرآن والدين»",
-    "d": "وصل الإعلان الهادئ إلى الأسر التي صُمّم لها البرنامج، فجاءت الطلبات قليلة العدد عالية الجدية."
+    "t": "23 طالبًا قُبلوا في الدورة الأولى",
+    "d": "وصل الإعلان الهادئ إلى الأسر التي صُمّم لها البرنامج، فجاءت الطلبات جادة، وامتلأ أكثر المقاعد المتاحة."
    },
    {
-    "t": "في الحفظ: الأكثر «جزء واحد» (6 من 16)، و9 تجاوزوا جزءًا واحدًا",
+    "t": "في الحفظ: الأكثر «جزء واحد» (6 من 17)، و10 تجاوزوا جزءًا واحدًا",
     "d": "نقاط البداية متفاوتة بين الأبناء؛ لذلك تبدأ خطة كل ابن من محفوظه هو، لا من نقطة واحدة للجميع."
    },
    {
@@ -2425,11 +2465,11 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
     "d": "اجتازت الفرز وطلبت دعمًا جزئيًا — وهنا يصنع الدعم فرقًا مباشرًا في مقعد طالب مستحق."
    },
    {
-    "t": "الأم تتابع ابنها يوميًا في 15 من 19 أسرة",
+    "t": "الأم تتابع ابنها يوميًا في 15 من 20 أسرة",
     "d": "لذلك يُكتب التقرير الأسبوعي بلغة واضحة تصل الأسرة كلها، ويُشرك الأب في المتابعة."
    },
    {
-    "t": "أضعف ما في الاستعداد: «المثابرة» (66%) و«الالتزام بالتعليمات» (67%)",
+    "t": "أضعف ما في الاستعداد: «المثابرة» (64%) و«الالتزام بالتعليمات» (65%)",
     "d": "نبدأ بهما في الأسابيع الأولى: مهام قصيرة تُكمَل، وتعليمات واضحة تتدرّج."
    },
    {
@@ -2644,7 +2684,8 @@ html.static .jp .node.cur .halo{animation:none;opacity:.6}
   // مقاعد تمتلئ واحدًا واحدًا
   document.querySelectorAll('[data-seats]').forEach(g => {
     const n = +g.dataset.seats, d0 = +(g.dataset.d0 || 4);
-    g.innerHTML = Array.from({ length: n }, (_, i) => `<span class="seat" style="--d:${d0 + i * .14}"><svg viewBox="0 0 40 44"><rect x="7" y="2" width="26" height="22" rx="7" fill="#E4DCCA"/><rect x="3" y="22" width="34" height="9" rx="4.5" fill="#CFC6B3"/><rect x="8" y="31" width="4" height="11" rx="2" fill="#B9C2CA"/><rect x="28" y="31" width="4" height="11" rx="2" fill="#B9C2CA"/></svg><svg class="f" data-a="seat" style="--d:${d0 + i * .14}" viewBox="0 0 40 44"><rect x="7" y="2" width="26" height="22" rx="7" fill="url(#gJv)"/><rect x="3" y="22" width="34" height="9" rx="4.5" fill="#0C2A43"/><rect x="8" y="31" width="4" height="11" rx="2" fill="#9AA6B0"/><rect x="28" y="31" width="4" height="11" rx="2" fill="#9AA6B0"/></svg></span>`).join('');
+    const fill = g.dataset.fillSrc ? (+getp(g.dataset.fillSrc) || 0) : n;
+    g.innerHTML = Array.from({ length: n }, (_, i) => `<span class="seat" style="--d:${d0 + i * .14}"><svg viewBox="0 0 40 44"><rect x="7" y="2" width="26" height="22" rx="7" fill="#E4DCCA"/><rect x="3" y="22" width="34" height="9" rx="4.5" fill="#CFC6B3"/><rect x="8" y="31" width="4" height="11" rx="2" fill="#B9C2CA"/><rect x="28" y="31" width="4" height="11" rx="2" fill="#B9C2CA"/></svg>${i < fill ? '' : '<!--'}<svg class="f" data-a="seat" style="--d:${d0 + i * .14}" viewBox="0 0 40 44"><rect x="7" y="2" width="26" height="22" rx="7" fill="url(#gJv)"/><rect x="3" y="22" width="34" height="9" rx="4.5" fill="#0C2A43"/><rect x="8" y="31" width="4" height="11" rx="2" fill="#9AA6B0"/><rect x="28" y="31" width="4" height="11" rx="2" fill="#9AA6B0"/></svg>${i < fill ? '' : '-->'}</span>`).join('');
   });
 
   // كشف الكلمات واحدة واحدة
